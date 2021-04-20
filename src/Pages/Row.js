@@ -4,10 +4,9 @@ import SingleContent from '../components/SingleContent';
 import './Row.css';
 import CustomPagination from '../components/Pagination';
 
-function Row({ title, fetchUrl }) {
+function Row() {
    const [movies, setMovies] = useState([]);
    const [page, setPage] = useState(1);
-   const baseURL = 'https://api.themovedb.org/3';
 
    const fetchData = async () => {
       const { request } = await axios.get(
@@ -16,7 +15,6 @@ function Row({ title, fetchUrl }) {
 
       const response = request.response;
       const result = JSON.parse(response);
-      console.log(result);
       setMovies(result.results);
    };
 
@@ -32,8 +30,9 @@ function Row({ title, fetchUrl }) {
                return (
                   <SingleContent
                      key={movie.id}
-                     title={movie.title}
-                     date={movie.release_date}
+                     id={movie.id}
+                     title={movie.title || movie.name}
+                     date={movie.release_date || movie.first_air_date}
                      image={movie.poster_path}
                      type={movie.media_type}
                      vote={movie.vote_average}

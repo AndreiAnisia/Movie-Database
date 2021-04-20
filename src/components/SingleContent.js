@@ -1,19 +1,20 @@
 import { Badge } from '@material-ui/core';
 import React from 'react';
+import ContentModal from './ContentModal/ContentModal';
 import './SingleContent.css';
 
 function SingleContent({ id, title, image, date, type, vote }) {
    const img_300 = 'https://image.tmdb.org/t/p/w300';
+
    const img_unavaible =
       'https://www.movienewz.com/img/films/poster-holder.jpg';
 
    return (
-      <div className="media">
+      <ContentModal type={type} id={id}>
          <Badge
             badgeContent={vote}
             color={vote > 6 ? 'primary' : 'secondary'}
          />
-
          <img
             className="image"
             src={image ? img_300 + image : img_unavaible}
@@ -26,7 +27,7 @@ function SingleContent({ id, title, image, date, type, vote }) {
             </span>
             <span className="info">{date}</span>
          </div>
-      </div>
+      </ContentModal>
    );
 }
 
