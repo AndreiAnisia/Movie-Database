@@ -6,6 +6,6 @@
 
 # Introduction
 
-Pulled data from the TMDB API and build an app that lets you see what movies or
+Pulled data from the TMDB API and build an app that lets you check what movies or
 tv series are trending this week, lets you search for movies or tv series by
 name and even shows you plot and actor informations.
