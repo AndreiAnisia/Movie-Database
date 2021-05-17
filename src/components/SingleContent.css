@@ -17,11 +17,11 @@
    transform: scale(1.02);
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
    .media {
       width: 46%;
    }
-}
+} */
 
 .image {
    border-top-left-radius: 10px;
